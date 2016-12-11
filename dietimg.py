@@ -14,4 +14,4 @@ imgs = os.listdir(workDir)
 for img in imgs:
     size = os.path.getsize(os.path.join(workDir, img))
     if size > (MAX_FILE_SIZE*1024):
-        print("{0} is {1} bytes.".format(img, size))
+        os.system('mogrify -quality 30% ' + img)
